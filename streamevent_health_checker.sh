@@ -17,5 +17,5 @@ else
         #restart gerrit (which gonna refresh the stream event) and run stream event listener into a local file to ensure that it is not hangig
         echo "[$NOW]: Gerrit hang suspected" >> $LOG
         cd /home/gerritadm/gerrit_site/ && ./bin/gerrit.sh restart >> $LOG
-        ssh -p 29418 codex_support@gerrit-qa.st.com gerrit stream-events >> $FILE &
+        ssh -p 29418 user@gerrit.server.com gerrit stream-events >> $FILE &
 fi ;
