@@ -1,11 +1,13 @@
 #! /bin/bash
 
+#gerrit path
+GERRIT_PATH="/home/gerritadm/gerrit_site/"
 #script path
-PATH="/home/gerritadm/gerrit_site/streamevent_health_checker/"
+SCRIPT_PATH="/home/gerritadm/gerrit_site/streamevent_health_checker/"
 #stream event output file (will be erased everytime the cron hits)
-FILE="$PATHstream_event.tmp"
+FILE="${SCRIPT_PATH}stream_event.tmp"
 #logging related params
-LOG="$PATHstream_event_checker.log"
+LOG="${SCRIPT_PATH}stream_event_checker.log"
 NOW=$(date)
 
 #Gerrit related params
@@ -20,6 +22,6 @@ if [[ -s $FILE ]] ; then
 else
         #restart gerrit (which gonna refresh the stream event) and run stream event listener into a local file to ensure that it is not hangig
         echo "[$NOW]: Gerrit hang suspected" >> $LOG
-        cd /home/gerritadm/gerrit_site/ && ./bin/gerrit.sh restart >> $LOG
+        cd $GERRIT_PATH && ./bin/gerrit.sh restart >> $LOG
         ssh -p $PORT $USER@$SERVER gerrit stream-events >> $FILE &
 fi ;
