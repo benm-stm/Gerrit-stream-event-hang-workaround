@@ -1,11 +1,11 @@
 #! /bin/bash
 
+#script path
+PATH="/home/gerritadm/gerrit_site/streamevent_health_checker/"
 #stream event output file (will be erased everytime the cron hits)
-FILE="/home/gerritadm/gerrit_site/streamevent_health_checker/stream_event.tmp"
-
+FILE="$PATHstream_event.tmp"
 #log file
-LOG="/home/gerritadm/gerrit_site/streamevent_health_checker/stream_event_checker.log"
-
+LOG="$PATHstream_event_checker.log"
 #used to mark loging date
 NOW=$(date)
 
