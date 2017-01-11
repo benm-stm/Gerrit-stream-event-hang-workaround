@@ -16,7 +16,7 @@ You also have to change the conf params according to your environment :)
 
 - 2nd approach: based on changes on an existing test commit (reliable)
 
-* here you have to create a new gerrit project and add its id to the commit-workround script (the script will disable and enable the concerned project to trig a new event)
+=>here you have to create a new gerrit project and add its id to the commit-workround script (the script will disable and enable the concerned project to trig a new event)
 
 Either way you use the first or the second approach is up to you
 
